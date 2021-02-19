@@ -1,0 +1,127 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Heebo', sans-serif;
+}
+/* UTILITIES */
+.list-reset {
+  text-decoration: none;
+  list-style: none;
+}
+
+i {
+  color: #D2D2D2;
+}
+/* HEADER */
+header {
+  height: 100px;
+  width: 100%;
+  background-color: #080B12;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+header button {
+  text-transform: uppercase;
+  border: 1px solid #FFF;
+  border-radius: 30px;
+  color: #FFF;
+  background-color: transparent;
+  padding: 10px 25px;
+  margin-right: 5px;
+}
+
+/* NAVBAR */
+.sidenav {
+  width: 200px;
+  height: 100vh;
+  background-color: #000000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidenav .logo {
+  height: 50px;
+  width: 150px;
+  border: 1px solid white;
+}
+
+.sidenav .playlist {
+  margin-top: 30px;
+  overflow-y: auto;
+}
+
+.sidenav .profile {
+  height: 60px;
+  width: 150px;
+  border: 1px solid white;
+  /* display: flex;
+  justify-content: space-between; */
+  margin: auto;
+
+}
+/* MAIN */
+main {
+  height: 100vh;
+  width: 100vw;
+  background-color: #141922;
+  overflow-y: auto;
+  padding-left: 200px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.main-menu {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+}
+.menu-item {
+  height: 30px;
+  min-width: 200px;
+  background-color: purple;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.recently,
+.create,
+.popular {
+  display: flex;
+  flex-wrap: wrap;
+
+}
+.card {
+  height: 200px;
+  min-width: 200px;
+  background-color: yellow;
+  margin: 10px 10px;
+}
+
+/* FOOTER */
+footer {
+  height: 100px;
+  width: 100vw;
+  background-color: #282828;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+}
