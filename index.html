@@ -4,8 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Spotify</title>
+  <title>Spotify Web</title>
 
+  <link rel="icon" href="./assets/img/spotify-logo-title.png" type="image/icon">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -15,67 +16,220 @@
   <header>
     <button type="button" name="upgrade">Effettua l'upgrade</button>
   </header>
-  <nav class="sidenav">
-    <div class="logo">
-      <i class="fab fa-spotify fa-2x"></i>
-    </div>
-    <div class="sidenav-menu">
-      <ul class="list-reset">
-        <li><a class="list-reset" href="#"><i class="fas fa-home fa-2x"></i>Home</a></li>
-        <li><a class="list-reset" href="#"><i class="fas fa-search fa-2x"></i>Cerca</a></li>
-        <li><a class="list-reset" href="#"><i class="fas fa-compact-disc fa-2x"></i>La tua libreria</a></li>
-      </ul>
-    </div>
-    <div class="playlist">
-      <h5>Playlist</h5>
-      <ul class="list-reset">
-        <li><a class="list-reset" href="#">Crea Playlist</a></li>
-        <li><a class="list-reset" href="#">Nome Playlist</a></li>
-        <li><a class="list-reset" href="#">Nome Playlist</a></li>
-        <li><a class="list-reset" href="#">Nome Playlist</a></li>
-        <li><a class="list-reset" href="#">Nome Playlist</a></li>
-        <li><a class="list-reset" href="#">Nome Playlist</a></li>
-        <li><a class="list-reset" href="#">Nome Playlist</a></li>
-        <li><a class="list-reset" href="#">Nome Playlist</a></li>
-      </ul>
-    </div>
-    <div class="profile">
-
-    </div>
-  </nav>
   <main>
-    <div class="main-menu">
-      <div class="menu-item list-reset"><a class="list-reset" href="">In evidenzia</a></div>
-      <div class="menu-item list-reset"><a class="list-reset" href="">In evidenzia</a></div>
-      <div class="menu-item list-reset"><a class="list-reset" href="">In evidenzia</a></div>
-      <div class="menu-item list-reset"><a class="list-reset" href="">In evidenzia</a></div>
-      <div class="menu-item list-reset"><a class="list-reset" href="">In evidenzia</a></div>
-      <div class="menu-item list-reset"><a class="list-reset" href="">In evidenzia</a></div>
+    <aside class="sidenav">
+      <div class="logo">
+        <a href=""><i class="fab fa-spotify fa-2x"></i></a>
+        <img src="./assets/img/spotify-logo.png" alt="">
+      </div>
+      <div class="sidenav-menu">
+        <ul class="list-reset">
+          <li>
+            <div class="home">
+              <div class="home-icon">
+                <a class="list-reset" href="#"><svg viewBox="0 0 512 512" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path d="M448 463.746h-149.333v-149.333h-85.334v149.333h-149.333v-315.428l192-111.746 192 110.984v316.19z" fill="currentColor"></path></svg></a>
+              </div>
+              <div class="home-text">
+                <a class="list-reset" href=""><span>Home</span></a>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="search">
+              <div class="search-icon">
+                <a class="list-reset" href="#"><svg viewBox="0 0 512 512" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path d="M349.714 347.937l93.714 109.969-16.254 13.969-93.969-109.969q-48.508 36.825-109.207 36.825-36.826 0-70.476-14.349t-57.905-38.603-38.603-57.905-14.349-70.476 14.349-70.476 38.603-57.905 57.905-38.603 70.476-14.349 70.476 14.349 57.905 38.603 38.603 57.905 14.349 70.476q0 37.841-14.73 71.619t-40.889 58.921zM224 377.397q43.428 0 80.254-21.461t58.286-58.286 21.461-80.254-21.461-80.254-58.286-58.285-80.254-21.46-80.254 21.46-58.285 58.285-21.46 80.254 21.46 80.254 58.285 58.286 80.254 21.461z" fill="currentColor" fill-rule="evenodd"></path></svg></a>
+              </div>
+              <div class="search-text">
+                <a class="list-reset" href=""><span>Cerca</span></a>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="library">
+              <div class="library-icon">
+                <a class="list-reset" href="#"><svg viewBox="0 0 512 512" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path d="M291.301 81.778l166.349 373.587-19.301 8.635-166.349-373.587zM64 463.746v-384h21.334v384h-21.334zM192 463.746v-384h21.334v384h-21.334z" fill="currentColor"></path></svg></a>
+              </div>
+              <div class="library-text">
+                <a class="list-reset" href=""><span>La tua libreria</span></a>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="playlist">
+        <h5>Playlist</h5>
+        <ul class="list-reset">
+          <li>
+            <div class="create-playlist">
+              <div class="plus">
+                <a href=""><i class="fas fa-plus"></i></a>
+              </div>
+              <div class="playlist-text">
+                <a class="list-reset" href="#">Crea Playlist</a>
+              </div>
+            </div>
+          </li>
+          <li><a class="list-reset" href="#">Nome Playlist</a></li>
+          <li><a class="list-reset" href="#">Nome Playlist</a></li>
+          <li><a class="list-reset" href="#">Nome Playlist</a></li>
+          <li><a class="list-reset" href="#">Nome Playlist</a></li>
+          <li><a class="list-reset" href="#">Nome Playlist</a></li>
+          <li><a class="list-reset" href="#">Nome Playlist</a></li>
+          <li><a class="list-reset" href="#">Nome Playlist</a></li>
+        </ul>
+      </div>
+      <div class="profile">
+        <div class="install">
+          <div>
+            <a class="list-reset" href=""><i class="far fa-arrow-alt-circle-down"></i></a>
+          </div>
+          <div class="install-text">
+            <a class="list-reset" href=""><span>Installa app</span></a>
+          </div>
+        </div>
+        <div class="profile-logo">
+          <div>
+            <a class="list-reset" href=""><i class="fas fa-user-circle fa-2x"></i></a>
+          </div>
+          <div class="profile-text">
+            <a class="list-reset" href=""><span>John Doe</span></a>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <div class="app-content">
+      <div class="main-menu">
+        <div class="menu-item list-reset"><a class="list-reset" href="">In evidenza</a></div>
+        <div class="menu-item list-reset"><a class="list-reset" href="">Podcast</a></div>
+        <div class="menu-item list-reset"><a class="list-reset" href="">Classifiche</a></div>
+        <div class="menu-item list-reset"><a class="list-reset" href="">generi e mood</a></div>
+        <div class="menu-item list-reset"><a class="list-reset" href="">Nuove uscite</a></div>
+        <div class="menu-item list-reset"><a class="list-reset" href="">scopri</a></div>
+      </div>
+      <section class="recently mt-2">
+        <h2>Recently Played</h2>
+        <div class="recently-wrap">
+          <div class="card">
+            <a class="list-reset" href="">
+              <div class="picture">
+                <img src="./assets/img/heavy-metal.jpg" alt="">
+              </div>
+              <div class="card-content">
+                <h3>Heavy Metal</h3>
+                <p>Subtitle</p>
+              </div>
+            </a>
+          </div>
+          <div class="card">
+            <a class="list-reset" href="">
+              <div class="picture">
+                <img src="./assets/img/strangers-things.jpg" alt="">
+              </div>
+              <div class="card-content">
+                <h3>Strangers Things, Vol. 1 (a Netflix Original Series Soundtrack)</h3>
+                <p>Kyle Dixon & Michael</p>
+              </div>
+            </a>
+          </div>
+          <div class="card">
+            <a class="list-reset" href="">
+              <div class="picture">
+                <img src="./assets/img/a-quiet-place.jpg" alt="">
+              </div>
+              <div class="card-content">
+                <h3>A quiet place</h3>
+                <p>Subtitle</p>
+              </div>
+            </a>
+          </div>
+          <div class="card">
+            <a class="list-reset" href="">
+              <div class="picture">
+                <img src="./assets/img/split.jpg" alt="">
+              </div>
+              <div class="card-content">
+                <h3>Split</h3>
+                <p>Subtitle</p>
+              </div>
+            </a>
+          </div>
+          <div class="card">
+            <a class="list-reset" href="">
+              <div class="picture">
+                <img src="./assets/img/wellness.jpg" alt="">
+              </div>
+              <div class="card-content">
+                <h3>A cure for wellness</h3>
+                <p>Subtitle</p>
+              </div>
+            </a>
+          </div>
+          <div class="card">
+            <a class="list-reset" href="">
+              <div class="picture">
+                <img src="./assets/img/sinister.jpg" alt="">
+              </div>
+              <div class="card-content">
+                <h3>Sinister</h3>
+                <p>Subtitle</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+      <section class="create mt-2">
+        <h2>Creato per John Doe</h2>
+        <p>Più ascolti, più accurati saranno i suggerimenti. </p>
+        <div class="create-wrap">
+          <div class="card">
+            <a class="list-reset" href="">
+              <div class="picture">
+                <img src="./assets/img/radar.jpeg" alt="">
+              </div>
+              <div class="card-content">
+                <h3>Release Radar</h3>
+              </div>
+            </a>
+          </div>
+          <div class="card">
+            <a class="list-reset" href="">
+              <div class="picture">
+                <img src="./assets/img/daily-mix.jpg" alt="">
+              </div>
+              <div class="card-content">
+                <h3>Daily Mix 1</h3>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+      <section class="popular mt-2 pb-2">
+        <h2>Artisti più popolari</h2>
+        <p>Più ascolti, più accurati saranno i suggerimenti. </p>
+        <div class="popular-wrap">
+          <div class="card">
+            <a class="list-reset" href="">
+              <div class="picture">
+                <img class="br" src="./assets/img/queen.jpg" alt="">
+              </div>
+              <div class="card-content">
+                <h3>Queen</h3>
+              </div>
+            </a>
+          </div>
+          <div class="card">
+            <a class="list-reset" href="">
+              <div class="picture">
+                <img class="br" src="./assets/img/pink-floyd.jpg" alt="">
+              </div>
+              <div class="card-content">
+                <h3>Pink Floyd</h3>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
     </div>
-    <div class="recently">
-      <h3>Recently Played</h3>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-      <div class="card"></div>
-    </div>
-    <div class="create">
-      <h3>Creato per John Doe</h3>
-      <p>Più ascolti, più accurati saranno i suggerimenti. </p>
-      <div class="card"></div>
-      <div class="card"></div>
-    </div>
-    <div class="popular">
-      <h3>Creato per John Doe</h3>
-      <p>Più ascolti, più accurati saranno i suggerimenti. </p>
-      <div class="card"></div>
-      <div class="card"></div>
-    </div>
-
-
-
   </main>
   <footer>
     <div class="">
