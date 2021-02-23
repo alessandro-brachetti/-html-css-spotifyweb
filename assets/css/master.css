@@ -27,10 +27,6 @@ aside {
   width: 50px;
   height: 100%;
   background-color: #000000;
-  /* position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 2; */
   padding: 10px;
   display: flex;
   flex-direction: column;
@@ -38,20 +34,14 @@ aside {
 
 main {
   height: calc(100vh - 100px);
-  /* width: 100vw; */
   background-color: #141922;
-  /* overflow-y: auto; */
+
   display: flex;
-  /* padding-left: 50px;
-  padding-top: 80px;
-  padding-bottom: 100px; */
 }
 
 .app-content {
   width: calc(100% - 50px);
   overflow-y: auto;
-
-  /* margin-top: 80px; */
   padding: 10px;
 }
 
@@ -59,16 +49,20 @@ footer {
   height: 100px;
   width: 100vw;
   background-color: #282828;
-  /* position: fixed;
+  position: fixed;
   bottom: 0;
   left: 0;
-  z-index: 1000; */
+  z-index: 1;
 }
 
 /* UTILITIES */
 .list-reset {
   text-decoration: none;
   list-style: none;
+}
+
+.br {
+  border-radius: 50%;
 }
 
 .mt-1 {
@@ -83,28 +77,48 @@ footer {
   padding-bottom: 2em;
 }
 
+.ml-30{
+  margin-left: 30px;
+}
+
+.mr-10 {
+  margin-right: 10px;
+}
 /* HEADER */
 header button {
   text-transform: uppercase;
   border: 1px solid #FFF;
   border-radius: 30px;
   color: #FFF;
+  font-size: 13px;
+  font-weight: 600;
   background-color: transparent;
-  padding: 10px 25px;
-  margin-right: 5px;
+  padding: 12px 40px;
+  margin-right: 20px;
 }
 
+header button:hover {
+  cursor: pointer;
+  transform: scale(1.15);
+}
+
+/* MAIN */
 /* SIDENAV */
+/* LOGO */
 .sidenav .logo i {
   color: #FFF;
 }
 
+.sidenav .logo i:hover {
+  color: #a5f42d;
+}
 .sidenav .logo img {
   height: 40px;
   width: 130px;
   display: none;
 }
 
+/* SIDENAV-MENU */
 .sidenav-menu {
   display: flex;
   justify-content: center;
@@ -124,27 +138,72 @@ header button {
   padding-left: 5px;
 }
 
-.home-text a span {
+.sidenav {
+  position: relative;
+}
+
+.home:before {
+  background-color: #a5f42d;
+  bottom: 0;
+  content: '';
+  display: block;
+  height: 35px;
+  width: 3px;
+  position: absolute;
+  left: 0;
+  top: 7.5%;
+  display: none;
+}
+
+.home-text a {
   font-size: 13px;
   font-weight: 600;
   color: #FFF;
 }
 
-.search-text a span,
-.library-text a span  {
+.search-text a {
   font-size: 13px;
   font-weight: 600;
   color: #626262;
+}
+
+.library-text a {
+  font-size: 13px;
+  font-weight: 600;
+  color: #626262;
+}
+
+.home-text a:hover {
+  color: #FFF;
+}
+
+.home-icon a svg path:hover {
+  color: #FFF;
+}
+.search-icon a svg path:hover {
+  color: #FFF;
+}
+.library-icon a svg path:hover {
+  color: #FFF;
+}
+.search-text a:hover {
+  color: #FFF;
+}
+.library-text a:hover {
+  color: #FFF;
 }
 
 .sidenav-menu ul li a svg {
   color: #D2D2D2;
 }
 
-.sidenav-menu ul li a span {
+.home-text,
+.search-text,
+.library-text {
   display: none;
 }
 
+/* SIDENAV-PLAYLIST */
 .sidenav .playlist {
   margin-top: 30px;
   overflow-y: auto;
@@ -184,6 +243,19 @@ header button {
   color: #626262;
 }
 
+.playlist ul li a:hover {
+  color: #FFF;
+}
+
+.create-playlist:hover .plus {
+  background-color: #FFF;
+}
+
+.create-playlist:hover .playlist-text a {
+  color: #FFF;
+}
+
+/* SIDENAV-PROFILE */
 .sidenav .profile {
   text-align: center;
   margin-top: auto;
@@ -194,6 +266,14 @@ header button {
   font-weight: 600;
   color: #626262;
   margin-bottom: 5px;
+}
+
+.sidenav .profile .install:hover i {
+  color: #FFF;
+}
+
+.sidenav .profile .install-text span:hover {
+  color: #FFF;
 }
 
 .sidenav .profile .profile-text span {
@@ -230,15 +310,16 @@ header button {
   color:  #989898;
 }
 
-/* MAIN */
+/* APP-CONTENT */
+/* MAIN-MENU */
 .main-menu {
   padding-top: 80px;
 
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-
 }
+
 .menu-item {
   margin: 10px;
   flex: 0 1 auto;
@@ -249,6 +330,26 @@ header button {
   font-weight: 600;
   text-transform: uppercase;
   color: #717378;
+}
+
+.main-menu .menu-item:first-child {
+  position: relative;
+}
+
+.main-menu .menu-item:after {
+  background-color: #a5f42d;
+  bottom: 0;
+  content: '';
+  display: block;
+  height: 2px;
+  width: 40px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%,0);
+}
+
+.menu-item a:hover {
+  color: #FFF;
 }
 
 main h2, h3 {
@@ -286,17 +387,302 @@ main p {
   height: 100%;
 }
 
-.br {
-  border-radius: 50%;
+.picture {
+  position: relative;
 }
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.play-button a i {
+  color: #FFF;
+}
+
+.picture:hover .overlay {
+  opacity: 1;
+}
+
 .card-content {
   max-width: 200px;
   text-align: center;
 }
 
 /* FOOTER */
+.media-player {
+  padding: 10px;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/* LAYOUT */
+.left {
+  display: flex;
+  align-items: center;
+  flex: 1 1 auto;
+}
+
+.middle {
+  text-align: center;
+  flex: 2 2 auto;
+}
+
+.right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex: 1 1 auto;
+}
+
+.left img {
+  width: 40px;
+  height: 40px;
+}
+
+.left-text h6 {
+  color: #FFF;
+}
+
+.left-text p {
+  font-size: 11px;
+  font-weight: 600;
+  color: #878787;
+  line-height: 1;
+}
+
+.left-text p:hover {
+  color: #FFF;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.left-icons {
+  padding-left: 15px;
+}
+
+.left-icons a i {
+  color: #878787;
+}
+
+.left-icons a i:hover {
+  color: #FFF;
+}
+
+.middle-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.middle-icons a i {
+  color: #fff;
+  margin: 0 10px;
+}
+
+.middle-icons a .fa-play-circle:hover {
+  transform: scale(1.2);
+}
 
 
+input[type=range] {
+  -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+  width: 100%; /* Specific width is required for Firefox. */
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+
+input[type=range]:focus {
+  outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+}
+
+input[type=range]::-ms-track {
+  width: 100%;
+  cursor: pointer;
+  background: transparent; /* Hides the slider so custom styles can be added */
+  border-color: transparent;
+  color: transparent;
+}
+Use the following to style the thumb:
+
+/* Special styling for WebKit/Blink */
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: 1px solid #000000;
+  height: 36px;
+  width: 16px;
+  border-radius: 3px;
+  background: #ffffff;
+  cursor: pointer;
+  margin-top: -14px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d; /* Add cool effects to your sliders! */
+}
+
+/* All the same stuff for Firefox */
+input[type=range]::-moz-range-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 36px;
+  width: 16px;
+  border-radius: 3px;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+/* All the same stuff for IE */
+input[type=range]::-ms-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 36px;
+  width: 16px;
+  border-radius: 3px;
+  background: #ffffff;
+  cursor: pointer;
+}
+Snippet:
+
+input[type=range] {
+  -webkit-appearance: none;
+  margin: 10px 0;
+  width: 100%;
+}
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  width: 70%;
+  height: 4px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+  background: #595959;
+  border-radius: 25px;
+  /* border: 0px solid #000101; */
+}
+input[type=range]::-webkit-slider-thumb {
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background: #FFF;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -5px;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #fff;
+}
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 4px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+  background: #595959;
+  border-radius: 25px;
+  /* border: 0px solid #000101; */
+}
+input[type=range]::-moz-range-thumb {
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background: #fff;
+  cursor: pointer;
+}
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 4px;
+  cursor: pointer;
+  animate: 0.2s;
+  background: transparent;
+  border-color: transparent;
+  /* border-width: 39px 0; */
+  color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+  background: #ac51b5;
+  border: 0px solid #000101;
+  border-radius: 50px;
+  box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+}
+input[type=range]::-ms-fill-upper {
+  background: #ac51b5;
+  border: 0px solid #000101;
+  border-radius: 50px;
+  box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+}
+input[type=range]::-ms-thumb {
+  box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+  border: 0px solid #000000;
+  height: 20px;
+  width: 39px;
+  border-radius: 7px;
+  background: #65001c;
+  cursor: pointer;
+}
+input[type=range]:focus::-ms-fill-lower {
+  background: #fff;
+}
+input[type=range]:focus::-ms-fill-upper {
+  background: #ac51b5;
+}
+
+.middle .slider-container {
+  width: 100%;
+  padding-top: 10px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.middle .slider-container:before {
+  content: '0:25';
+  padding-right: 10px;
+  font-size: 10px;
+  font-weight: 600;
+  color: #FFF;
+}
+
+.middle .slider-container:after {
+  content: '4:35';
+  padding-left: 10px;
+  font-size: 10px;
+  font-weight: 600;
+  color: #FFF;
+}
+.middle .slider {
+  width: 70%;
+}
+
+.right .slider {
+  width: 30%;
+}
+.right .right-icons a i{
+  margin: 5px;
+  color: #FFF;
+}
 /* MEDIA QUERIES */
 @media all and (min-width: 639px) and (max-width: 877px) {
   header {
@@ -304,6 +690,10 @@ main p {
   }
   .sidenav {
     width: 200px;
+  }
+  .home:before {
+    display: block;
+    top: 8%;
   }
 
   .app-content {
@@ -324,15 +714,14 @@ main p {
     display: block;
   }
 
-  .install {
-    justify-content: flex-start;
-  }
+  .install,
   .sidenav-menu {
     justify-content: flex-start;
-    /* padding-left: 5px; */
   }
 
-  .sidenav-menu ul li a span {
+  .home-text,
+  .search-text,
+  .library-text {
     display: block;
   }
 
@@ -349,10 +738,6 @@ main p {
   .sidenav .profile-logo {
     margin-top: 5px;
   }
-
-  /* main {
-    padding-left: 200px;
-  } */
 
   .recently-wrap,
   .create-wrap,
@@ -365,6 +750,10 @@ main p {
   .card {
     flex: 0 1 calc(100%/2 - 10px);
   }
+
+  .left-icons {
+    padding-left: 30px;
+  }
 }
 @media all and (min-width: 878px) and (max-width: 1439px) {
   header {
@@ -373,6 +762,11 @@ main p {
 
   .sidenav {
     width: 200px;
+  }
+
+  .home:before {
+    display: block;
+    top: 8%;
   }
 
   .app-content {
@@ -393,15 +787,14 @@ main p {
     display: block;
   }
 
-  .install {
-    justify-content: flex-start;
-  }
+  .install,
   .sidenav-menu {
     justify-content: flex-start;
-    /* padding-left: 5px; */
   }
 
-  .sidenav-menu ul li a span {
+  .home-text,
+  .search-text,
+  .library-text {
     display: block;
   }
 
@@ -418,10 +811,6 @@ main p {
   .sidenav .profile-logo {
     margin-top: 5px;
   }
-
-  /* main {
-    padding-left: 200px;
-  } */
 
   .recently-wrap,
   .create-wrap,
@@ -434,6 +823,10 @@ main p {
   .card {
     flex: 0 1 calc(100%/4 - 10px);
   }
+
+  .left-icons {
+    padding-left: 30px;
+  }
 }
 
 @media all and (min-width: 1440px) {
@@ -443,6 +836,10 @@ main p {
 
   .sidenav {
     width: 200px;
+  }
+
+  .home:before {
+    display: block;
   }
 
   .app-content {
@@ -463,15 +860,14 @@ main p {
     display: block;
   }
 
-  .install {
-    justify-content: flex-start;
-  }
+  .install,
   .sidenav-menu {
     justify-content: flex-start;
-    /* padding-left: 5px; */
   }
 
-  .sidenav-menu ul li a span {
+  .home-text,
+  .search-text,
+  .library-text {
     display: block;
   }
 
@@ -489,10 +885,6 @@ main p {
     margin-top: 5px;
   }
 
-  /* main {
-    padding-left: 200px;
-  } */
-
   .recently-wrap,
   .create-wrap,
   .popular-wrap {
@@ -503,5 +895,9 @@ main p {
 
   .card {
     flex: 0 1 calc(100%/6 - 10px);
+  }
+
+  .left-icons {
+    padding-left: 30px;
   }
 }
